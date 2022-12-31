@@ -14,26 +14,29 @@ FIND_COMPONENTS() {
         do
             if [ -f "$file" ];
                 then
-                filename=$(basename == "$file")
+                filename=$(basename -- "$file")
                 extension="${filename##*.}"
                 filename="${filename%.*}"
 
-                COMPONENTS+=( "filename" )
+                COMPONENTS+=( "$filename" )
             fi
     done
+    echo ${COMPONENTS[@]}
 }
 
 ARE_COMPONENTS() {
     FIND_COMPONENTS
 
-    for arg in "${ARGUMENTS[@]}";
+    for i in "${ARGUMENTS[@]}";
         do
-            if [[ " ${COMPONENTS[*]} " =~ " $arg " ]];
+            if [[ " ${COMPONENTS[*]} " =~ " $i " ]];
                 then
                 # is inside arg array, append matching array
                 WANTED_COMPONENTS+=($i)
             fi
     done
+
+    echo "${#WANTED_COMPONENTS[@]} ${#ARGUMENTS[@]}"
 
     if [[ ${#WANTED_COMPONENTS[@]} -eq ${#ARGUMENTS[@]} ]];
         then
