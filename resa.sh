@@ -21,7 +21,6 @@ FIND_COMPONENTS() {
                 COMPONENTS+=( "$filename" )
             fi
     done
-    echo ${COMPONENTS[@]}
 }
 
 ARE_COMPONENTS() {
@@ -35,8 +34,6 @@ ARE_COMPONENTS() {
                 WANTED_COMPONENTS+=($i)
             fi
     done
-
-    echo "${#WANTED_COMPONENTS[@]} ${#ARGUMENTS[@]}"
 
     if [[ ${#WANTED_COMPONENTS[@]} -eq ${#ARGUMENTS[@]} ]];
         then
@@ -90,7 +87,7 @@ CREATE_COMPONENT_FILES_SCSS() {
 
     mkdir ./src/components
 
-    for i in "${ARG_ARRAY[@]}";
+    for i in "${ARGUMENTS[@]}";
         do
             # i should be capitalized
             I=`echo "${i^}"`
@@ -141,7 +138,7 @@ MOD_APP_JS() {
 
     " > ./src/App.js
 
-    for i in "${ARG_ARRAY[@]}";
+    for i in "${ARGUMENTS[@]}";
         do
 
         # i must be capitalized 
@@ -195,7 +192,7 @@ DEFAULT_APP_JS() {
 }
 
 # RUN_COMPONENTS_SCRIPTS() {
-#     for i in "${ARG_ARRAY[@]}";
+#     for i in "${ARGUMENTS[@]}";
 #         do
 #             # run the script
 #             ~/code/myman/reactman/components_script/${i}.sh
