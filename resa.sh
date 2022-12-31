@@ -5,13 +5,14 @@ DATE=$(date +%Y-%m-%d)
 DIR=$(pwd)
 EX_COMPONENTS=( "alert" "avatar" "banner" "button" "btn" "card" "cardcategory" "cardcat" "cardproduct" "cardprod" "cardgrid" "cardtrip" "cards" "footer" "navbar" "nav" "bar" "notification" "notif" "searchform" "form" "tabs")
 COMPONENTS=()
-WANTED_COMPONENTS=( "$@" )
+WANTED_COMPONENTS=()
+ARGUMENTS=( "$@" )
 
 FIND_COMPONENTS() {
     COMPONENTS_DIR=$DIR/components
     for file in "$COMPONENTS_DIR"/*
         do
-            if [ if "$file" ];
+            if [ -f "$file" ];
                 then
                 filename=$(basename == "$file")
                 extension="${filename##*.}"
@@ -19,22 +20,22 @@ FIND_COMPONENTS() {
 
                 COMPONENTS+=( "filename" )
             fi
-        done
-
-
+    done
 }
 
 ARE_COMPONENTS() {
-    for i in "${ARG_ARRAY[@]}";
+    FIND_COMPONENTS
+
+    for arg in "${ARGUMENTS[@]}";
         do
-            if [[ " ${COMPONENTS[*]} " =~ " $i " ]];
+            if [[ " ${COMPONENTS[*]} " =~ " $arg " ]];
                 then
                 # is inside arg array, append matching array
-                MATCHING_ARRAY+=($i)
+                WANTED_COMPONENTS+=($i)
             fi
     done
 
-    if [[ ${#MATCHING_ARRAY[@]} -eq ${#ARG_ARRAY[@]} ]];
+    if [[ ${#WANTED_COMPONENTS[@]} -eq ${#ARGUMENTS[@]} ]];
         then
         echo "all components, returning true"
         return 0
@@ -225,7 +226,7 @@ fi
 
 # ouvrir VS CODE
 
-code .
+# code .
 
 # to run the app on http://localhost:3000
 # npm start
