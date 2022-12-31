@@ -3,9 +3,26 @@
 read -p "Nom du projet : " NOM_DU_PROJET
 DATE=$(date +%Y-%m-%d)
 DIR=$(pwd)
-COMPONENTS=( "alert" "avatar" "banner" "button" "btn" "card" "cardcategory" "cardcat" "cardproduct" "cardprod" "cardgrid" "cardtrip" "cards" "footer" "navbar" "nav" "bar" "notification" "notif" "searchform" "form" "tabs")
-ARG_ARRAY=( "$@" )
-MATCHING_ARRAY=()
+EX_COMPONENTS=( "alert" "avatar" "banner" "button" "btn" "card" "cardcategory" "cardcat" "cardproduct" "cardprod" "cardgrid" "cardtrip" "cards" "footer" "navbar" "nav" "bar" "notification" "notif" "searchform" "form" "tabs")
+COMPONENTS=()
+WANTED_COMPONENTS=( "$@" )
+
+FIND_COMPONENTS() {
+    COMPONENTS_DIR=$DIR/components
+    for file in "$COMPONENTS_DIR"/*
+        do
+            if [ if "$file" ];
+                then
+                filename=$(basename == "$file")
+                extension="${filename##*.}"
+                filename="${filename%.*}"
+
+                COMPONENTS+=( "filename" )
+            fi
+        done
+
+
+}
 
 ARE_COMPONENTS() {
     for i in "${ARG_ARRAY[@]}";
@@ -46,7 +63,7 @@ INSTALL_NPX() {
 
 INSTALL_SASS() {
     echo "installing SASS"
-    sleep 3
+    sleep 2 
     # installing sass with yarn, not npm
     yarn add sass
 
@@ -59,13 +76,13 @@ INSTALL_SASS() {
 
 INSTALL_MATERIAL_UI() {
     echo "------------------ INSTALLATION DE MATERIAL UI ------------------"
-    sleep 3 
+    sleep 2 
     npm install @mui/material @emotion/react @emotion/styled
 }
 
 CREATE_COMPONENT_FILES_SCSS() {
     echo "------------------ CREATION DU FICHIER VARIABLES.SCSS ------------------"
-    sleep 3 
+    sleep 2 
 
     mkdir ./src/components
 
@@ -104,17 +121,13 @@ CREATE_COMPONENT_FILES_SCSS() {
     " > ./src/components/_variables.scss
 
     echo "------------------ IMPORTATION DU FICHIER VARIABLES.SCSS ------------------"
-    sleep 3
+    sleep 2 
 
     # import _variables.scss in App.scss
     echo "@import './components/variables';" > ./src/App.scss
 }
 
 MOD_APP_JS() {
-
-    # todo
-    # make sure app.js is in right place.
-
     echo "
         import './App.scss';
         
@@ -127,7 +140,7 @@ MOD_APP_JS() {
     for i in "${ARG_ARRAY[@]}";
         do
 
-        # i must be first char upcase
+        # i must be capitalized 
         I=`echo "${i^}"`
 
         # import component at top of App.js
