@@ -48,6 +48,8 @@ ARE_COMPONENTS() {
 }
 
 INSTALL_NPX() {
+    echo "------------------ STARTING NPX ------------------"
+    sleep 2
     npx create-react-app $NOM_DU_PROJET
     # Apps.js is created
 
@@ -63,16 +65,17 @@ INSTALL_NPX() {
 }
 
 INSTALL_SASS() {
-    echo "installing SASS"
+    echo ""
+    echo "------------------ INSTALLATION DE SASS ------------------"
     sleep 2 
     # installing sass with yarn, not npm
     yarn add sass
-
     mv ./src/App.css ./src/App.scss
-
     # modify App.js for sass
     sed -i "s/css/scss/" ./src/App.js
+    echo ""
     echo "to use a component, add @use './shared.scss'; to App.js"
+    sleep 2
 }
 
 INSTALL_MATERIAL_UI() {
