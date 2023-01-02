@@ -1,7 +1,6 @@
 
 ![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
 
-
 # Resa
 
 Resa is a React with Sass project creator. It uses Npx and Material UI to accelerate the development of React applications.
