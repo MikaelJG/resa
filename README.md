@@ -22,7 +22,7 @@ In .bashrc, write an alias for Resa.
   alias resa="~/code/resa/resa.sh"
   
 ```
-Install Noti
+Install Resa
 ```bash
  git clone https://github.com/MikaelJG/Resa
 ```
