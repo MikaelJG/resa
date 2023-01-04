@@ -1,0 +1,7 @@
+// do I want all components to be installed, ready for all projects?
+
+// do I want my UI kit to be installed, ready for all my projects?
+
+// when I create a component, I should always save it in my UI kit. 
+
+
