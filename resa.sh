@@ -224,6 +224,7 @@ DEFAULT_APP_JS() {
 #}
 
 # INSTALL_TAILWIND() {
+    # see tutorial pinned tailwind setup
 #    npx tailwind init 
 #
 #    ../src
