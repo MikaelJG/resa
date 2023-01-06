@@ -66,8 +66,15 @@ INSTALL_SASS() {
     echo ""
     echo "------------------ INSTALLATION DE SASS ------------------"
     sleep 2 
+
     # installing sass with yarn, not npm
     yarn add sass
+
+    # try with npm 
+    # npm install node-sass --save-dev
+    # OR
+    # npm install --save-dev sass
+
     mv ./src/App.css ./src/App.scss
     # modify App.js for sass
     sed -i "s/css/scss/" ./src/App.js
