@@ -241,6 +241,10 @@ DEFAULT_APP_JS() {
 #     done
 # }
 
+# INSTALL_NEXTJS() {
+    # npm install next
+#}
+
 COMPONENTS_ALL() {
     CREATE_COMPONENT_FILES_SCSS
 
