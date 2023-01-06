@@ -68,12 +68,13 @@ INSTALL_SASS() {
     sleep 2 
 
     # installing sass with yarn, not npm
-    yarn add sass
+    # yarn add sass
 
     # try with npm 
     # npm install node-sass --save-dev
     # OR
     # npm install --save-dev sass
+    npm i sass
 
     mv ./src/App.css ./src/App.scss
     # modify App.js for sass
