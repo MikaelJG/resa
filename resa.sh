@@ -186,7 +186,7 @@ DEFAULT_APP_JS() {
     import Button from '@mui/material/Button';
     import './App.scss';
     
-    function App() {
+    export default function App() {
         return (
             <div className='App'>
                 <Navbar />
@@ -203,7 +203,30 @@ DEFAULT_APP_JS() {
     
     export default App;
     " > ./src/App.js
+
+    # in component Navbar.js
+    # in component Footer.js
+    # in component Header.js
+    # in component Content.js
+    
+    # dans chaque fichier:
+    # export default function Navbar() {
+    #    return (
+    #        <div>
+    #            <h1>Navbar</h1>
+    #        </div>
+    #    )
+    # }
 }
+
+# INSTALL_BOOTSTRAP() {
+
+#}
+
+# INSTALL_TAILWIND() {
+
+#}
+
 
 # RUN_COMPONENTS_SCRIPTS() {
 #     for i in "${ARGUMENTS[@]}";
