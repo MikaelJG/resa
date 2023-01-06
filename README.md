@@ -1,5 +1,5 @@
 
-![Logo](https://github.com/MikaelJG/noti/blob/master/assets/resa_logo.png)
+![Logo](https://github.com/MikaelJG/resa/blob/master/assets/resa_logo.png)
 
 # Resa
 
