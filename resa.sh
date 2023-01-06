@@ -1,9 +1,7 @@
 #!/bin/bash
 
 read -p "Nom du projet : " NOM_DU_PROJET
-DATE=$(date +%Y-%m-%d)
 DIR=$(pwd)
-EX_COMPONENTS=( "alert" "avatar" "banner" "button" "btn" "card" "cardcategory" "cardcat" "cardproduct" "cardprod" "cardgrid" "cardtrip" "cards" "footer" "navbar" "nav" "bar" "notification" "notif" "searchform" "form" "tabs")
 COMPONENTS=()
 WANTED_COMPONENTS=()
 ARGUMENTS=( "$@" )
@@ -83,6 +81,11 @@ INSTALL_MATERIAL_UI() {
     sleep 2 
     npm install @mui/material @emotion/react @emotion/styled
 }
+
+# INSTALL_BOOTSTRAP() {
+    # add this line in index.html
+    # why don't I have an index.html?
+#}
 
 CREATE_COMPONENT_FILES_SCSS() {
     echo "------------------ CREATION DU FICHIER VARIABLES.SCSS ------------------"
@@ -219,6 +222,7 @@ INSTALL_ALL() {
     INSTALL_MATERIAL_UI
 }
 
+# $1 is what ARE_COMPONENTS returns!
 if ARE_COMPONENTS $1;
     then
     INSTALL_ALL
