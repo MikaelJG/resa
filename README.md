@@ -5,33 +5,34 @@
 
 Resa is a React with Sass project creator. It uses Npx and Material UI to accelerate the development of React applications.
 
-Written in Bash, Resa creates apps with your chosen components. In the command line, specify the components and the app will be automatically created with them.
+Written in Bash and Lua, Resa creates apps with your chosen components. In the command line, specify the components and the app will be automatically created with them.
 ## Installation
 In your home directory, create or update your .bashrc file.
 ```bash
-  cd # move to home
-  vim .bashrc # edit your .bashrc file
+$ cd # move to home
+$ vim .bashrc # edit your .bashrc file
 ```
 In .bashrc, write an alias for Resa.
 ```bash
-  alias resa="~/path/to/file.sh"
+  alias resa="lua ~/path/to/start.lua"
 
   # example
-  alias resa="~/code/resa/resa.sh"
+  alias resa="lua ~/code/resa/start.lua"
 ```
 Install Resa.
 ```bash
- git clone https://github.com/MikaelJG/Resa
+$ git clone https://github.com/MikaelJG/Resa
+```
+Install Lua.
+```bash
+$ sudo apt install lua5.3 
 ```
 ## Examples.
 
 Specify all needed components in order.
 ```bash
-# create react with sass application
-$ resa alert button card
-
-$ resa aalert button card
-# at least one component doesn't exist
+$ resa alert button card # create react with sass app
+$ resa aalert button card # at least one component doesn't exist
 ```
 ## Demo
 Insert gif or link to demo
