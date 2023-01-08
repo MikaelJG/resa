@@ -190,10 +190,7 @@ DEFAULT_APP_JS() {
                   > Hello Julien!</Button>
             </div>
         )
-    }
-    
-    export default App;
-    " > ./src/App.js
+    }" > ./src/App.js
         
     touch ./src/components/Navbar.js
 
