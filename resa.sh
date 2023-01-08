@@ -1,5 +1,5 @@
 #!/bin/bash
-./variables.sh $@
+./variables.sh
 source ./install.sh
 source ./components.sh
 source ./appjs.sh

@@ -12,6 +12,8 @@ FIND_COMPONENTS() {
                 COMPONENTS+=( "$filename" )
             fi
     done
+
+    echo ${COMPONENTS[@]}
 }
 
 ARE_COMPONENTS() {
