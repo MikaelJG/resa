@@ -12,8 +12,6 @@ FIND_COMPONENTS() {
                 COMPONENTS+=( "$filename" )
             fi
     done
-
-    echo ${COMPONENTS[@]}
 }
 
 ARE_COMPONENTS() {
@@ -28,7 +26,12 @@ ARE_COMPONENTS() {
             fi
     done
 
-    if [[ ${#WANTED_COMPONENTS[@]} -eq ${#ARGUMENTS[@]} ]];
+    if [ -z "${ARGUMENTS}" ];
+        then
+        echo "args are nil"
+        return 0
+
+    elif [[ ${#WANTED_COMPONENTS[@]} -eq ${#ARGUMENTS[@]} ]];
         then
         echo "all components, returning true"
         return 0
