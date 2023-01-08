@@ -66,16 +66,7 @@ INSTALL_SASS() {
     echo ""
     echo "------------------ INSTALLATION DE SASS ------------------"
     sleep 2 
-
-    # installing sass with yarn, not npm
-    # yarn add sass
-
-    # try with npm 
-    # npm install node-sass --save-dev
-    # OR
-    # npm install --save-dev sass
     npm i sass
-
     mv ./src/App.css ./src/App.scss
     # modify App.js for sass
     sed -i "s/css/scss/" ./src/App.js
@@ -203,20 +194,50 @@ DEFAULT_APP_JS() {
     
     export default App;
     " > ./src/App.js
+        
+    touch ./src/components/Navbar.js
 
-    # in component Navbar.js
-    # in component Footer.js
-    # in component Header.js
-    # in component Content.js
-    
-    # dans chaque fichier:
-    # export default function Navbar() {
-    #    return (
-    #        <div>
-    #            <h1>Navbar</h1>
-    #        </div>
-    #    )
-    # }
+    echo "
+    export default function Navbar() {
+        return (
+            <div>
+                <h1>Navbar</h1>
+            </div>
+        )
+    }" >> .src/components/Navbar.js
+
+    touch ./src/components/Footer.js
+
+    echo "
+    export default function Footer() {
+        return (
+            <div>
+                <h1>Footer</h1>
+            </div>
+        )
+    }" >> .src/components/Footer.js
+
+    touch ./src/components/Header.js
+
+    echo "
+    export default function Header() {
+        return (
+            <div>
+                <h1>Header</h1>
+            </div>
+        )
+    }" >> .src/components/Header.js
+
+    touch ./src/components/Content.js
+
+    echo "
+    export default function Content() {
+        return (
+            <div>
+                <h1>Content</h1>
+            </div>
+        )
+    }" >> .src/components/Content.js
 }
 
 # INSTALL_BOOTSTRAP() {
@@ -241,9 +262,9 @@ DEFAULT_APP_JS() {
 #     done
 # }
 
-# INSTALL_NEXTJS() {
-    # npm install next
-#}
+INSTALL_NEXTJS() {
+    npm install next
+}
 
 COMPONENTS_ALL() {
     CREATE_COMPONENT_FILES_SCSS
@@ -260,6 +281,7 @@ INSTALL_ALL() {
     INSTALL_NPX
     INSTALL_SASS
     INSTALL_MATERIAL_UI
+    INSTALL_NEXTJS
 }
 
 # $1 is what ARE_COMPONENTS returns!
