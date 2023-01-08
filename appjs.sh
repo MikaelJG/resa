@@ -1,3 +1,5 @@
+. ./variables.sh
+
 MOD_APP_JS() {
     echo "
         import './App.scss';

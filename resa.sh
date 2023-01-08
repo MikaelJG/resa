@@ -1,11 +1,5 @@
 #!/bin/bash
-
-NOM_DU_PROJECT=$1
-DIR=$(pwd)
-COMPONENTS=()
-WANTED_COMPONENTS=()
-ARGUMENTS=( "$@" )
-
+./variables.sh $@
 source ./install.sh
 source ./components.sh
 source ./appjs.sh

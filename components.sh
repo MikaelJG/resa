@@ -1,4 +1,4 @@
-
+. ./variables.sh
 FIND_COMPONENTS() {
     COMPONENTS_DIR=$DIR/components
     for file in "$COMPONENTS_DIR"/*

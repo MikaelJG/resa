@@ -1,0 +1,7 @@
+NOM_DU_PROJET="tiike"
+DIR=$(pwd)
+COMPONENTS=()
+WANTED_COMPONENTS=()
+ARGUMENTS=$1
+
+echo ${ARGUMENTS[*]}

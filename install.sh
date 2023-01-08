@@ -1,3 +1,4 @@
+. ./variables.sh
 
 INSTALL_NPX() {
     echo "------------------ STARTING NPX ------------------"
