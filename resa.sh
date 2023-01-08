@@ -204,7 +204,7 @@ DEFAULT_APP_JS() {
                 <h1>Navbar</h1>
             </div>
         )
-    }" >> .src/components/Navbar.js
+    }" >> ./src/components/Navbar.js
 
     touch ./src/components/Footer.js
 
@@ -215,7 +215,7 @@ DEFAULT_APP_JS() {
                 <h1>Footer</h1>
             </div>
         )
-    }" >> .src/components/Footer.js
+    }" >> ./src/components/Footer.js
 
     touch ./src/components/Header.js
 
@@ -226,7 +226,7 @@ DEFAULT_APP_JS() {
                 <h1>Header</h1>
             </div>
         )
-    }" >> .src/components/Header.js
+    }" >> ./src/components/Header.js
 
     touch ./src/components/Content.js
 
@@ -237,7 +237,7 @@ DEFAULT_APP_JS() {
                 <h1>Content</h1>
             </div>
         )
-    }" >> .src/components/Content.js
+    }" >> ./src/components/Content.js
 }
 
 # INSTALL_BOOTSTRAP() {
